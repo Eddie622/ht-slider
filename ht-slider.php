@@ -35,6 +35,9 @@ if ( !class_exists( 'HT_Slider' ) ){
     class HT_Slider {
         function __construct(){
             $this->define_constants();
+
+            require_once( HT_SLIDER_PATH . 'post-types/class.ht-slider-cpt.php' );
+            $HT_Slider_Post_Type = new HT_Slider_Post_Type();
         }
 
         public function define_constants(){
