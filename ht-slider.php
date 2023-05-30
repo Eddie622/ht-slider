@@ -27,6 +27,37 @@ You should have received a copy of the GNU General Public License
 along with HT Slider. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
 */
 
-if( ! defined( 'ABSPATH') ){
+if( !defined( 'ABSPATH') ){
     exit;
+}
+
+if ( !class_exists( 'HT_Slider' ) ){
+    class HT_Slider {
+        function __construct(){
+            $this->define_constants();
+        }
+
+        public function define_constants(){
+            define( 'HT_SLIDER_VERSION', '1.0.0' );
+            define( 'HT_SLIDER_PATH', plugin_dir_path( __FILE__ ) );
+            define( 'HT_SLIDER_URL', plugin_dir_url( __FILE__ ) );
+        }
+
+        public static function activate(){
+            update_option( 'rewrite_rules', '' );
+        }
+        public static function deactivate(){
+            flush_rewrite_rules();
+        }
+        public static function uninstall(){
+
+        }
+    }
+}
+
+if( class_exists( 'HT_Slider' ) ){
+    register_activation_hook( __FILE__, array( 'HT_Slider', 'activate' ) );
+    register_deactivation_hook( __FILE__, array( 'HT_Slider', 'deactivate' ) );
+    register_uninstall_hook( __FILE__, array( 'HT_Slider', 'uninstall' ) );
+    $ht_slider = new HT_Slider();
 }
