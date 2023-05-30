@@ -33,6 +33,15 @@ if( !defined( 'ABSPATH') ){
 
 if ( !class_exists( 'HT_Slider' ) ){
     class HT_Slider {
+        private static $instance = null;
+
+        public static function get_instance() {
+            if( null === self::$instance ) {
+                self::$instance = new self();
+            }
+            return self::$instance;
+        }
+
         function __construct(){
             $this->define_constants();
 
@@ -51,6 +60,7 @@ if ( !class_exists( 'HT_Slider' ) ){
         }
         public static function deactivate(){
             flush_rewrite_rules();
+            unregister_post_type( 'ht-slider' );
         }
         public static function uninstall(){
 
@@ -62,5 +72,5 @@ if( class_exists( 'HT_Slider' ) ){
     register_activation_hook( __FILE__, array( 'HT_Slider', 'activate' ) );
     register_deactivation_hook( __FILE__, array( 'HT_Slider', 'deactivate' ) );
     register_uninstall_hook( __FILE__, array( 'HT_Slider', 'uninstall' ) );
-    $ht_slider = new HT_Slider();
+    HT_Slider::get_instance();
 }
