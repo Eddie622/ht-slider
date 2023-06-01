@@ -45,6 +45,8 @@ if ( !class_exists( 'HT_Slider' ) ){
         function __construct(){
             $this->define_constants();
 
+            add_action( 'admin_menu', array( $this, 'add_menu' ) );
+
             require_once( HT_SLIDER_PATH . 'post-types/class.ht-slider-cpt.php' );
             $HT_Slider_Post_Type = new HT_Slider_Post_Type();
         }
@@ -58,12 +60,47 @@ if ( !class_exists( 'HT_Slider' ) ){
         public static function activate(){
             update_option( 'rewrite_rules', '' );
         }
+
         public static function deactivate(){
             flush_rewrite_rules();
             unregister_post_type( 'ht-slider' );
         }
+
         public static function uninstall(){
 
+        }
+
+        public function add_menu(){
+            add_menu_page(
+                esc_html__( 'HT Slider Options', 'ht-slider' ),
+                esc_html__( 'HT Slider', 'ht-slider' ),
+                'manage_options',
+                'ht_slider_admin',
+                array( $this, 'ht_slider_settings_page' ),
+                'dashicons-images-alt2'
+            );
+
+            add_submenu_page(
+                'ht_slider_admin',
+                esc_html__( 'Manage Slides', 'ht-slider' ),
+                esc_html__( 'Manage Slides', 'ht-slider' ),
+                'manage_options',
+                'edit.php?post_type=ht-slider',
+                null
+            );
+
+            add_submenu_page(
+                'ht_slider_admin',
+                esc_html__( 'Add New Slide', 'ht-slider' ),
+                esc_html__( 'Add New Slide', 'ht-slider' ),
+                'manage_options',
+                'post-new.php?post_type=ht-slider',
+                null
+            );
+        }
+
+        public function ht_slider_settings_page(){
+            // require_once( HT_SLIDER_PATH . 'views/ht-slider-admin.php' );
         }
     }
 }
