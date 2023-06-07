@@ -49,6 +49,9 @@ if ( !class_exists( 'HT_Slider' ) ){
 
             require_once( HT_SLIDER_PATH . 'post-types/class.ht-slider-cpt.php' );
             $HT_Slider_Post_Type = new HT_Slider_Post_Type();
+
+            require_once( HT_SLIDER_PATH . 'post-types/class.ht-slider-settings.php' );
+            $HT_Slider_Settings = new HT_Slider_Settings();
         }
 
         public function define_constants(){
@@ -72,8 +75,8 @@ if ( !class_exists( 'HT_Slider' ) ){
 
         public function add_menu(){
             add_menu_page(
-                esc_html__( 'HT Slider Options', 'ht-slider' ),
-                esc_html__( 'HT Slider', 'ht-slider' ),
+                __( 'HT Slider Options', 'ht-slider' ),
+                __( 'HT Slider', 'ht-slider' ),
                 'manage_options',
                 'ht_slider_admin',
                 array( $this, 'ht_slider_settings_page' ),
@@ -82,8 +85,8 @@ if ( !class_exists( 'HT_Slider' ) ){
 
             add_submenu_page(
                 'ht_slider_admin',
-                esc_html__( 'Manage Slides', 'ht-slider' ),
-                esc_html__( 'Manage Slides', 'ht-slider' ),
+                __( 'Manage Slides', 'ht-slider' ),
+                __( 'Manage Slides', 'ht-slider' ),
                 'manage_options',
                 'edit.php?post_type=ht-slider',
                 null
@@ -91,8 +94,8 @@ if ( !class_exists( 'HT_Slider' ) ){
 
             add_submenu_page(
                 'ht_slider_admin',
-                esc_html__( 'Add New Slide', 'ht-slider' ),
-                esc_html__( 'Add New Slide', 'ht-slider' ),
+                __( 'Add New Slide', 'ht-slider' ),
+                __( 'Add New Slide', 'ht-slider' ),
                 'manage_options',
                 'post-new.php?post_type=ht-slider',
                 null
@@ -100,7 +103,7 @@ if ( !class_exists( 'HT_Slider' ) ){
         }
 
         public function ht_slider_settings_page(){
-            // require_once( HT_SLIDER_PATH . 'views/ht-slider-admin.php' );
+            require_once( HT_SLIDER_PATH . 'views/ht-slider_settings.php' );
         }
     }
 }
