@@ -13,7 +13,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
             register_setting(
                 'ht_slider_group',
                 'ht_slider_options',
-                // array( $this, 'ht_slider_options_validate' )
+                array( $this, 'ht_slider_options_validate' )
             );
 
             add_settings_section(
@@ -106,9 +106,25 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
         }
 
         public function ht_slider_options_validate( $input ) {
-            // $valid = array();
-            // $valid['ht_slider_shortcode'] = sanitize_text_field( $input['ht_slider_shortcode'] );
-            // return $valid;
+            $valid = array();
+            foreach( self::$options as $key => $value ) {
+                $valid[$key] = sanitize_text_field( $value );
+                switch( $key ) {
+                    case 'ht_slider_title':
+                        $valid[$key] = sanitize_text_field( $value );
+                        break;
+                    case 'ht_slider_url':
+                        $valid[$key] = esc_url_raw( $value );
+                        break;
+                    case 'ht_slider_int':
+                        $valid[$key] = absint( $value );
+                        break;
+                    default:
+                        $valid[$key] = sanitize_text_field( $input[$key] );
+                        break;
+                }
+            }
+            return $valid;
         }
     }
 }
