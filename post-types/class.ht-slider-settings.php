@@ -13,7 +13,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
             register_setting(
                 'ht_slider_group',
                 'ht_slider_options',
-                array( $this, 'ht_slider_options_validate' )
+                // array( $this, 'ht_slider_options_validate' )
             );
 
             add_settings_section(
@@ -111,6 +111,14 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
                 $valid[$key] = sanitize_text_field( $value );
                 switch( $key ) {
                     case 'ht_slider_title':
+                        if( empty( $input[$key] ) ) {
+                            add_settings_error(
+                                'ht_slider_title',
+                                'ht_slider_title_error',
+                                'Please enter a title for the slider',
+                                'error'
+                            );
+                        }
                         $valid[$key] = sanitize_text_field( $value );
                         break;
                     case 'ht_slider_url':

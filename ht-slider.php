@@ -103,6 +103,13 @@ if ( !class_exists( 'HT_Slider' ) ){
         }
 
         public function ht_slider_settings_page(){
+            if( !current_user_can( 'manage_options' ) ){
+                return;
+            }
+            if( isset( $_GET['settings-updated'] ) ){
+                add_settings_error( 'ht_slider_messages', 'ht_slider_message', __( 'Settings Saved', 'ht-slider' ), 'success' );
+            }
+            settings_errors( 'ht_slider_options' );
             require_once( HT_SLIDER_PATH . 'views/ht-slider_settings.php' );
         }
     }
