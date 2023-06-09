@@ -52,6 +52,9 @@ if ( !class_exists( 'HT_Slider' ) ){
 
             require_once( HT_SLIDER_PATH . 'class.ht-slider-settings.php' );
             $HT_Slider_Settings = new HT_Slider_Settings();
+
+            require_once( HT_SLIDER_PATH . 'shortcodes/class.ht-slider-shortcode.php' );
+            $HT_Slider_Shortcode = new HT_Slider_Shortcode();
         }
 
         public function define_constants(){
