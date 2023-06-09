@@ -107,14 +107,14 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
 
         public function ht_slider_options_validate( $input ) {
             $valid = array();
-            foreach( self::$options as $key => $value ) {
+            foreach( $input as $key => $value ) {
                 $valid[$key] = sanitize_text_field( $value );
                 switch( $key ) {
                     case 'ht_slider_title':
                         if( empty( $input[$key] ) ) {
                             add_settings_error(
-                                'ht_slider_title',
-                                'ht_slider_title_error',
+                                'ht_slider_options',
+                                'ht_slider_message',
                                 'Please enter a title for the slider',
                                 'error'
                             );
