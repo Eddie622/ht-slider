@@ -50,7 +50,7 @@ if ( !class_exists( 'HT_Slider' ) ){
             require_once( HT_SLIDER_PATH . 'post-types/class.ht-slider-cpt.php' );
             $HT_Slider_Post_Type = new HT_Slider_Post_Type();
 
-            require_once( HT_SLIDER_PATH . 'post-types/class.ht-slider-settings.php' );
+            require_once( HT_SLIDER_PATH . 'class.ht-slider-settings.php' );
             $HT_Slider_Settings = new HT_Slider_Settings();
         }
 

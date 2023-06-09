@@ -13,7 +13,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
             register_setting(
                 'ht_slider_group',
                 'ht_slider_options',
-                // array( $this, 'ht_slider_options_validate' )
+                array( $this, 'ht_slider_options_validate' )
             );
 
             add_settings_section(
@@ -124,7 +124,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
                     case 'ht_slider_url':
                         $valid[$key] = esc_url_raw( $value );
                         break;
-                    case 'ht_slider_int':
+                    case 'ht_slider_bullets':
                         $valid[$key] = absint( $value );
                         break;
                     default:
