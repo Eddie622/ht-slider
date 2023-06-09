@@ -53,6 +53,10 @@ if( !class_exists( 'HT_Slider_Shortcode' ) ) {
             if( !empty ( $id ) ) {
                 $id = array_map( 'absint', explode( ',', $id ) );
             }
+
+            ob_start();
+            require( HT_SLIDER_PATH . 'views/ht-slider_shortcode.php');
+            return ob_get_clean();
         }
     }
 }
