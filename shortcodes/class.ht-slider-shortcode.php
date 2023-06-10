@@ -57,9 +57,9 @@ if( !class_exists( 'HT_Slider_Shortcode' ) ) {
             ob_start();
             require( HT_SLIDER_PATH . 'views/ht-slider_shortcode.php');
             wp_enqueue_script( 'ht-slider-main-jq' );
-            wp_enqueue_script( 'ht-slider-options-js' );
             wp_enqueue_style( 'ht-slider-main-css' );
             wp_enqueue_style( 'ht-slider-style-css' );
+            ht_slider_options();
             return ob_get_clean();
         }
     }

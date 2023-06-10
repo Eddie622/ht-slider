@@ -19,7 +19,7 @@
                 if( has_post_thumbnail() ) {
                     the_post_thumbnail( 'full', array( 'class' => 'img-fluid' ) ); 
                 } else {
-                    echo '<img src="' . HT_SLIDER_URL . 'assets/images/default.jpg" alt="placeholder" class="img-fluid wp-post-image" />';
+                    echo ht_slider_get_placeholder_image();
                 }
                 ?>
                 <div class="hts-container">
