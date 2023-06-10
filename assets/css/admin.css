@@ -1,0 +1,9 @@
+.ht-slider-metabox label{
+    color: #f00;
+}
+.ht-slider-metabox td{
+    padding: 5px;
+}
+.ht-slider-metabox th{
+    padding: 10px 10px 5px 0;
+}
