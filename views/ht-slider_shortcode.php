@@ -1,5 +1,5 @@
 <h3><?php echo ( ! empty ( $content ) ) ? esc_html__( $content, 'ht-slider' ) : esc_html__( HT_Slider_Settings::$options['ht_slider_title'], 'ht-slider' ); ?></h3>
-<div class="ht-slider flexslider ">
+<div class="ht-slider flexslider <?php echo ( isset( HT_Slider_Settings::$options['ht_slider_style'] ) ? esc_attr__( HT_Slider_Settings::$options['ht_slider_style'] ) : 'style-1' ); ?>">
     <ul class="slides">
         <?php
             $args = array(
@@ -15,7 +15,13 @@
                 while( $query->have_posts() ) : $query->the_post();
         ?>
             <li>
-                <?php the_post_thumbnail( 'full', array( 'class' => 'img-fluid' ) ); ?>
+                <?php
+                if( has_post_thumbnail() ) {
+                    the_post_thumbnail( 'full', array( 'class' => 'img-fluid' ) ); 
+                } else {
+                    echo '<img src="' . HT_SLIDER_URL . 'assets/images/default.jpg" alt="placeholder" class="img-fluid wp-post-image" />';
+                }
+                ?>
                 <div class="hts-container">
                     <div class="slider-details-container">
                         <div class="wrapper">
