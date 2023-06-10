@@ -1,0 +1,246 @@
+# Blank WordPress Pot
+# Copyright 2014 ...
+# This file is distributed under the GNU General Public License v3 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: HT "
+"Slider v1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"Translator Name "
+"<translations@example."
+"com>\n"
+"POT-Creation-Date: "
+"2023-06-10 18:53-0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Your "
+"Name <you@example.com>\n"
+"Language-Team: Your Team "
+"<translations@example."
+"com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/"
+"plain; charset=UTF-8\n"
+"Content-Transfer-"
+"Encoding: 8bit\n"
+"Plural-Forms: "
+"nplurals=2; plural=n != "
+"1;\n"
+"X-Textdomain-Support: "
+"yesX-Generator: Poedit "
+"1.6.4\n"
+"X-Poedit-SourceCharset: "
+"UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;esc_html_e;"
+"esc_html_x:1,2c;"
+"esc_html__;esc_attr_e;"
+"esc_attr_x:1,2c;"
+"esc_attr__;_ex:1,2c;"
+"_nx:4c,1,2;"
+"_nx_noop:4c,1,2;_x:1,2c;"
+"_n:1,2;_n_noop:1,2;"
+"__ngettext:1,2;"
+"__ngettext_noop:1,2;_c,"
+"_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit "
+"3.3.1\n"
+"X-Poedit-"
+"SearchPath-0: .\n"
+
+#: class.ht-slider-settings.php:21
+msgid "How Does it Work?"
+msgstr ""
+
+#: class.ht-slider-settings.php:28
+msgid ""
+"Other PLugin Options"
+msgstr ""
+
+#: class.ht-slider-settings.php:35
+msgid "Shortcode"
+msgstr ""
+
+#: class.ht-slider-settings.php:43
+msgid "Slider Title"
+msgstr ""
+
+#: class.ht-slider-settings.php:54
+msgid "Slider Bullets"
+msgstr ""
+
+#: class.ht-slider-settings.php:65
+msgid "Slider Style"
+msgstr ""
+
+#: class.ht-slider-settings.php:80
+msgid ""
+"Use the shortcode "
+"[ht_slider] to display "
+"the slider in any post/"
+"page/widget"
+msgstr ""
+
+#: class.ht-slider-settings.php:118
+msgid ""
+"Please enter a title for "
+"the slider"
+msgstr ""
+
+#: ht-slider.php:92
+msgid "HT Slider Options"
+msgstr ""
+
+#: ht-slider.php:93
+#: post-types/class.ht-slider-cpt.php:18
+msgid "HT Slider"
+msgstr ""
+
+#: ht-slider.php:102
+#: ht-slider.php:103
+msgid "Manage Slides"
+msgstr ""
+
+#: ht-slider.php:111
+#: ht-slider.php:112
+msgid "Add New Slide"
+msgstr ""
+
+#: ht-slider.php:124
+msgid "Settings Saved"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:19
+#: post-types/class.ht-slider-cpt.php:21
+msgid "Sliders"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:22
+#: post-types/class.ht-slider-cpt.php:23
+#: post-types/class.ht-slider-cpt.php:24
+msgid "Slider"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:25
+msgid "Add New"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:26
+msgid "Add New Slider"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:27
+msgid "New Slider"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:28
+msgid "Edit Slider"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:29
+msgid "View Slider"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:30
+msgid "All Sliders"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:31
+msgid "Search Sliders"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:32
+msgid "Parent Sliders:"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:33
+msgid "No Sliders found."
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:34
+msgid ""
+"No Sliders found in "
+"Trash."
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:35
+msgid "Slider Cover Image"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:36
+msgid "Set cover image"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:37
+msgid "Remove cover image"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:38
+msgid "Use as cover image"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:39
+msgid "Slider archives"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:40
+msgid "Insert into Slider"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:41
+msgid ""
+"Uploaded to this Slider"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:42
+msgid "Filter Sliders list"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:43
+msgid ""
+"Sliders list navigation"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:44
+msgid "Sliders list"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:65
+#: views/ht-slider_metabox.php:9
+msgid "Link Text"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:66
+#: views/ht-slider_metabox.php:24
+msgid "Link URL"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:89
+msgid "Link options"
+msgstr ""
+
+#: post-types/class.ht-slider-cpt.php:123
+msgid "Add some text"
+msgstr ""
+
+#: views/ht-slider_settings.php:5
+msgid "main_options"
+msgstr ""
+
+#: views/ht-slider_settings.php:6
+msgid "Main Options"
+msgstr ""
+
+#: views/ht-slider_settings.php:8
+msgid "additional_options"
+msgstr ""
+
+#: views/ht-slider_settings.php:9
+msgid "Additional Options"
+msgstr ""
+
+#: views/ht-slider_settings.php:20
+msgid "Save Settings"
+msgstr ""

@@ -77,7 +77,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
         }
 
         public function ht_slider_shortcode_callback() {
-            esc_html_e( '<span>Use the shortcode [ht_slider] to display the slider in any post/page/widget</span>', 'ht-slider' );
+            echo ('<span>' . esc_html_e( 'Use the shortcode [ht_slider] to display the slider in any post/page/widget', 'ht-slider' ) . '</span>' );
         }
 
         public function ht_slider_title_callback( $args ) {
