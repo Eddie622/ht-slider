@@ -3,10 +3,10 @@
     <?php $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'main_options'; ?>
     <h2 class="nav-tab-wrapper">
         <a href="?page=ht_slider_admin&tab=main_options" class="nav-tab" <?php echo esc_attr__( $active_tab == 'main_options' ? 'nav-tab-active' : ''); ?>>
-            <?php echo esc_html_e( 'Main Options', 'ht-slider' )?>
+            <?php esc_html_e( 'Main Options', 'ht-slider' ) ?>
         </a>
         <a href="?page=ht_slider_admin&tab=additional_options" class="nav-tab" <?php echo esc_attr__( $active_tab == 'additional_options' ? 'nav-tab-active' : ''); ?>>
-            <?php echo esc_html_e( 'Additional Options', 'ht-slider' )?>
+            <?php esc_html_e( 'Additional Options', 'ht-slider' ) ?>
         </a>
     </h2>
     <form action="options.php" method="post">
@@ -17,7 +17,7 @@
             } else {
                 do_settings_sections( 'ht_slider_page2' );
             }
-            submit_button( 'Save Settings' );
+            submit_button( esc_html__( 'Save Settings', 'ht-slider' ) );
         ?>
     </form>
 </div>

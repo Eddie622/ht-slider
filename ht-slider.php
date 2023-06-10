@@ -45,6 +45,8 @@ if ( !class_exists( 'HT_Slider' ) ){
         function __construct(){
             $this->define_constants();
 
+            $this->load_textdomain();
+
             require_once( HT_SLIDER_PATH . 'functions/functions.php' );
 
             add_action( 'admin_menu', array( $this, 'add_menu' ) );
@@ -81,10 +83,14 @@ if ( !class_exists( 'HT_Slider' ) ){
 
         }
 
+        public function load_textdomain(){
+            load_plugin_textdomain( 'ht-slider', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+        }
+
         public function add_menu(){
             add_menu_page(
-                __( 'HT Slider Options', 'ht-slider' ),
-                __( 'HT Slider', 'ht-slider' ),
+                esc_html__( 'HT Slider Options', 'ht-slider' ),
+                esc_html__( 'HT Slider', 'ht-slider' ),
                 'manage_options',
                 'ht_slider_admin',
                 array( $this, 'ht_slider_settings_page' ),
@@ -93,8 +99,8 @@ if ( !class_exists( 'HT_Slider' ) ){
 
             add_submenu_page(
                 'ht_slider_admin',
-                __( 'Manage Slides', 'ht-slider' ),
-                __( 'Manage Slides', 'ht-slider' ),
+                esc_html__( 'Manage Slides', 'ht-slider' ),
+                esc_html__( 'Manage Slides', 'ht-slider' ),
                 'manage_options',
                 'edit.php?post_type=ht-slider',
                 null
@@ -102,8 +108,8 @@ if ( !class_exists( 'HT_Slider' ) ){
 
             add_submenu_page(
                 'ht_slider_admin',
-                __( 'Add New Slide', 'ht-slider' ),
-                __( 'Add New Slide', 'ht-slider' ),
+                esc_html__( 'Add New Slide', 'ht-slider' ),
+                esc_html__( 'Add New Slide', 'ht-slider' ),
                 'manage_options',
                 'post-new.php?post_type=ht-slider',
                 null
@@ -115,7 +121,7 @@ if ( !class_exists( 'HT_Slider' ) ){
                 return;
             }
             if( isset( $_GET['settings-updated'] ) ){
-                add_settings_error( 'ht_slider_options', 'ht_slider_message', __( 'Settings Saved', 'ht-slider' ), 'success' );
+                add_settings_error( 'ht_slider_options', 'ht_slider_message', esc_html__( 'Settings Saved', 'ht-slider' ), 'success' );
             }
             settings_errors( 'ht_slider_options' );
             require_once( HT_SLIDER_PATH . 'views/ht-slider_settings.php' );

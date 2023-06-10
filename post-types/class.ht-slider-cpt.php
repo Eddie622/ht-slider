@@ -15,33 +15,33 @@ if( !class_exists( 'HT_Slider_Post_Type' ) ){
             register_post_type(
                 'ht-slider',
                 array(
-                    'label' => __( 'HT Slider', 'ht-slider' ),
-                    'description' => __( 'Sliders', 'ht-slider' ),
+                    'label' => esc_html__( 'HT Slider', 'ht-slider' ),
+                    'description' => esc_html__( 'Sliders', 'ht-slider' ),
                     'labels' => array(
-                        'name' => __( 'Sliders', 'ht-slider' ),
-                        'singular_name' => __( 'Slider', 'ht-slider' ),
-                        'menu_name' => __( 'Slider', 'ht-slider' ),
-                        'name_admin_bar' => __( 'Slider', 'ht-slider' ),
-                        'add_new' => __( 'Add New', 'ht-slider' ),
-                        'add_new_item' => __( 'Add New Slider', 'ht-slider' ),
-                        'new_item' => __( 'New Slider', 'ht-slider' ),
-                        'edit_item' => __( 'Edit Slider', 'ht-slider' ),
-                        'view_item' => __( 'View Slider', 'ht-slider' ),
-                        'all_items' => __( 'All Sliders', 'ht-slider' ),
-                        'search_items' => __( 'Search Sliders', 'ht-slider' ),
-                        'parent_item_colon' => __( 'Parent Sliders:', 'ht-slider' ),
-                        'not_found' => __( 'No Sliders found.', 'ht-slider' ),
-                        'not_found_in_trash' => __( 'No Sliders found in Trash.', 'ht-slider' ),
-                        'featured_image' => __( 'Slider Cover Image', 'ht-slider' ),
-                        'set_featured_image' => __( 'Set cover image', 'ht-slider' ),
-                        'remove_featured_image' => __( 'Remove cover image', 'ht-slider' ),
-                        'use_featured_image' => __( 'Use as cover image', 'ht-slider' ),
-                        'archives' => __( 'Slider archives', 'ht-slider' ),
-                        'insert_into_item' => __( 'Insert into Slider', 'ht-slider' ),
-                        'uploaded_to_this_item' => __( 'Uploaded to this Slider', 'ht-slider' ),
-                        'filter_items_list' => __( 'Filter Sliders list', 'ht-slider' ),
-                        'items_list_navigation' => __( 'Sliders list navigation', 'ht-slider' ),
-                        'items_list' => __( 'Sliders list', 'ht-slider' ),
+                        'name' => esc_html__( 'Sliders', 'ht-slider' ),
+                        'singular_name' => esc_html__( 'Slider', 'ht-slider' ),
+                        'menu_name' => esc_html__( 'Slider', 'ht-slider' ),
+                        'name_admin_bar' => esc_html__( 'Slider', 'ht-slider' ),
+                        'add_new' => esc_html__( 'Add New', 'ht-slider' ),
+                        'add_new_item' => esc_html__( 'Add New Slider', 'ht-slider' ),
+                        'new_item' => esc_html__( 'New Slider', 'ht-slider' ),
+                        'edit_item' => esc_html__( 'Edit Slider', 'ht-slider' ),
+                        'view_item' => esc_html__( 'View Slider', 'ht-slider' ),
+                        'all_items' => esc_html__( 'All Sliders', 'ht-slider' ),
+                        'search_items' => esc_html__( 'Search Sliders', 'ht-slider' ),
+                        'parent_item_colon' => esc_html__( 'Parent Sliders:', 'ht-slider' ),
+                        'not_found' => esc_html__( 'No Sliders found.', 'ht-slider' ),
+                        'not_found_in_trash' => esc_html__( 'No Sliders found in Trash.', 'ht-slider' ),
+                        'featured_image' => esc_html__( 'Slider Cover Image', 'ht-slider' ),
+                        'set_featured_image' => esc_html__( 'Set cover image', 'ht-slider' ),
+                        'remove_featured_image' => esc_html__( 'Remove cover image', 'ht-slider' ),
+                        'use_featured_image' => esc_html__( 'Use as cover image', 'ht-slider' ),
+                        'archives' => esc_html__( 'Slider archives', 'ht-slider' ),
+                        'insert_into_item' => esc_html__( 'Insert into Slider', 'ht-slider' ),
+                        'uploaded_to_this_item' => esc_html__( 'Uploaded to this Slider', 'ht-slider' ),
+                        'filter_items_list' => esc_html__( 'Filter Sliders list', 'ht-slider' ),
+                        'items_list_navigation' => esc_html__( 'Sliders list navigation', 'ht-slider' ),
+                        'items_list' => esc_html__( 'Sliders list', 'ht-slider' ),
                     ),
                     'public' => true,
                     'supports' => array( 'title', 'editor', 'thumbnail' ),
@@ -86,7 +86,7 @@ if( !class_exists( 'HT_Slider_Post_Type' ) ){
         public function add_meta_boxes(){
             add_meta_box(
                 'ht_slider_meta_box',
-                __( 'Link options', 'ht-slider' ),
+                esc_html__( 'Link options', 'ht-slider' ),
                 array( $this, 'add_inner_meta_boxes' ),
                 'ht-slider',
                 'normal',
@@ -120,7 +120,7 @@ if( !class_exists( 'HT_Slider_Post_Type' ) ){
                 $new_link_url = $_POST['ht_slider_link_url'];
 
                 if( empty( $new_link_text )){
-                    update_post_meta( $post_id, 'ht_slider_link_text', 'Add some text' );
+                    update_post_meta( $post_id, 'ht_slider_link_text', esc_html__( 'Add some text', 'ht-slider' ) );
                 } else {
                     update_post_meta( $post_id, 'ht_slider_link_text', sanitize_text_field( $new_link_text ), $old_link_text );
                 }

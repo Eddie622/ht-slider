@@ -18,21 +18,21 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
 
             add_settings_section(
                 'ht_slider_main_section',
-                'How Does it Work?',
+                esc_html__( 'How Does it Work?', 'ht-slider' ),
                 null,
                 'ht_slider_page1'
             );
 
             add_settings_section(
                 'ht_slider_second_section',
-                'Other Plugin Options',
+                esc_html__( 'Other PLugin Options', 'ht-slider' ),
                 null,
                 'ht_slider_page2'
             );
             
             add_settings_field(
                 'ht_slider_shortcode',
-                'Shortcode',
+                esc_html__( 'Shortcode', 'ht-slider' ),
                 array( $this, 'ht_slider_shortcode_callback' ),
                 'ht_slider_page1',
                 'ht_slider_main_section'
@@ -40,7 +40,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
 
             add_settings_field(
                 'ht_slider_title',
-                'Slider Title',
+                esc_html__( 'Slider Title', 'ht-slider' ),
                 array( $this, 'ht_slider_title_callback' ),
                 'ht_slider_page2',
                 'ht_slider_second_section',
@@ -51,7 +51,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
 
             add_settings_field(
                 'ht_slider_bullets',
-                'Slider Bullets',
+                esc_html__( 'Slider Bullets', 'ht-slider' ),
                 array( $this, 'ht_slider_bullets_callback' ),
                 'ht_slider_page2',
                 'ht_slider_second_section',
@@ -62,7 +62,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
 
             add_settings_field(
                 'ht_slider_style',
-                'Slider Style',
+                esc_html__( 'Slider Style', 'ht-slider' ),
                 array( $this, 'ht_slider_style_callback' ),
                 'ht_slider_page2',
                 'ht_slider_second_section',
@@ -77,7 +77,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
         }
 
         public function ht_slider_shortcode_callback() {
-            echo _e( '<span>Use the shortcode [ht_slider] to display the slider in any post/page/widget</span>' );
+            esc_html_e( '<span>Use the shortcode [ht_slider] to display the slider in any post/page/widget</span>', 'ht-slider' );
         }
 
         public function ht_slider_title_callback( $args ) {
@@ -115,7 +115,7 @@ if( !class_exists( 'HT_Slider_Settings' ) ) {
                             add_settings_error(
                                 'ht_slider_options',
                                 'ht_slider_message',
-                                'Please enter a title for the slider',
+                                esc_html__( 'Please enter a title for the slider', 'ht-slider' ),
                                 'error'
                             );
                         }
